@@ -15,8 +15,7 @@ sudo wget -O /usr/local/bin/gpio.sh http://fordsfords.github.io/gpio_sh/gpio.sh
 # configure jack
 mv ./system.conf /etc/dbus-1/system.conf
 chmod 644 /etc/dbus-1/system.conf
-echo '@realtime   -  rtprio     99' >> /etc/security/limits.conf
-echo '@realtime   -  memlock    unlimited' >> /etc/security/limits.conf
+mv ./etc_security_limits.conf /etc/security/limits.conf
 groupadd realtime
 usermod -a -G realtime root
 usermod -a -G realtime chip
@@ -65,6 +64,7 @@ cd /home/chip
 mkdir code
 git clone https://github.com/Inhibition-EEG/audio_synthesis.git /home/chip/code/audio
 cp /home/chip/code/audio/* /home/chip/Inhibition
+
 git clone https://github.com/Inhibition-EEG/neural_net.git /home/chip/code/neural
 cd /home/chip/code/neural
 mkdir build
@@ -72,6 +72,7 @@ cd build
 cmake ..
 make
 cp Install/* /home/chip/Inhibition
+
 git clone https://github.com/Inhibition-EEG/read_spi /home/chip/code/spi
 cd /home/chip/code/spi
 mkdir build
@@ -91,7 +92,7 @@ mv ./rc.local /etc/rc.local
 chmod 755 /etc/rc.local
 
 # crontab job
-mv etc_cron.d_ieeg /etc/cron.d/ieeg
+mv ./etc_cron.d_ieeg /etc/cron.d/ieeg
 
 #clean up
 mv /home/chip/halt /etc/init.d/halt
