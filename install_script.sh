@@ -13,9 +13,9 @@ apt-get -y install jackd2 python-dev alsa-base alsa-utils libicu-dev libasound2-
 sudo wget -O /usr/local/bin/gpio.sh http://fordsfords.github.io/gpio_sh/gpio.sh
 
 # configure jack
-mv ./system.conf /etc/dbus-1/system.conf
+cp ./system.conf /etc/dbus-1/system.conf
 chmod 644 /etc/dbus-1/system.conf
-mv ./etc_security_limits.conf /etc/security/limits.conf
+cp ./etc_security_limits.conf /etc/security/limits.conf
 groupadd realtime
 usermod -a -G realtime root
 usermod -a -G realtime chip
@@ -84,16 +84,16 @@ cp Install/* /home/chip/Inhibition
 # init script
 cd /home/chip
 mkdir Inhibition
-mv ./run.sh Inhibition/
+cp ./run.sh Inhibition/
 chmod 777 /home/chip/Inhibition/run.sh
 
 # rc.local
-mv ./rc.local /etc/rc.local
+cp ./rc.local /etc/rc.local
 chmod 755 /etc/rc.local
 
 # crontab job
-mv ./etc_cron.d_ieeg /etc/cron.d/ieeg
+cp ./etc_cron.d_ieeg /etc/cron.d/ieeg
 
 #clean up
-mv /home/chip/halt /etc/init.d/halt
+cp /home/chip/halt /etc/init.d/halt
 chmod 755 /etc/init.d/halt
