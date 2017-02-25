@@ -1,8 +1,8 @@
 #!/bin/sh
 
 # arguments
-SSID=$1
-PASSWD=$2
+SSID="$1"
+PASSWD="$2"
 
 #connect to the internet
 nmcli device wifi connect $SSID password $PASSWD ifname wlan0
