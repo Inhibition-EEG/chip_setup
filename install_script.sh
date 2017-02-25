@@ -1,11 +1,11 @@
 #!/bin/sh
 
 # arguments
-SSID="$1"
-PASSWD="$2"
+SSID=$1
+PASSWD=$2
 
 #connect to the internet
-nmcli device wifi connect $SSID password $PASSWD ifname wlan0
+nmcli device wifi connect "$SSID" password "$PASSWD" ifname wlan0
 
 #update and install dependencies and tools we will most likely need -> *DO NOT UPGRADE
 apt-get update
