@@ -91,7 +91,7 @@ mv ./rc.local /etc/rc.local
 chmod 755 /etc/rc.local
 
 # crontab job
-(crontab -l 2>/dev/null; echo "@reboot /bin/bash /home/chip/Inhibition/run.sh") | crontab -
+mv etc_cron.d_ieeg /etc/cron.d/ieeg
 
 #clean up
 mv /home/chip/halt /etc/init.d/halt
