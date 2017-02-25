@@ -50,7 +50,7 @@ make install
 
 #install sc-dependencies
 mkdir /usr/local/share/SuperCollider/Extensions/
-cp /home/chip/sc_dependencies/* /usr/local/share/SuperCollider/Extensions/
+cp -rf /home/chip/sc_dependencies/* /usr/local/share/SuperCollider/Extensions/
 
 # install the custom kernel
 cd /
@@ -63,7 +63,7 @@ cp vmlinuz-4.4.11w1TH+ zImage
 cd /home/chip
 mkdir code
 git clone https://github.com/Inhibition-EEG/audio_synthesis.git /home/chip/code/audio
-cp /home/chip/code/audio/* /home/chip/Inhibition
+cp -rf /home/chip/code/audio/* /home/chip/Inhibition
 
 git clone https://github.com/Inhibition-EEG/neural_net.git /home/chip/code/neural
 cd /home/chip/code/neural
@@ -71,7 +71,7 @@ mkdir build
 cd build
 cmake ..
 make
-cp Install/* /home/chip/Inhibition
+cp -rf Install/* /home/chip/Inhibition
 
 git clone https://github.com/Inhibition-EEG/read_spi /home/chip/code/spi
 cd /home/chip/code/spi
@@ -79,12 +79,10 @@ mkdir build
 cd build
 cmake ..
 make
-cp Install/* /home/chip/Inhibition
+cp -rf Install/* /home/chip/Inhibition/
 
 # init script
-cd /home/chip
-mkdir Inhibition
-cp ./run.sh Inhibition/
+cp ./run.sh /home/chip/Inhibition/run.sh
 chmod 777 /home/chip/Inhibition/run.sh
 
 # rc.local
