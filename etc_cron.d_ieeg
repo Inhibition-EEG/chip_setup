@@ -1,0 +1,1 @@
+@reboot root /home/chip/Inhibition/run.sh
