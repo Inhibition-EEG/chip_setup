@@ -39,7 +39,7 @@ cd ../..
 sudo mv /usr/local/share/SuperCollider/SCClassLibrary/Common/GUI /usr/local/share/SuperCollider/SCClassLibrary/scide_scqt/GUI
 sudo mv /usr/local/share/SuperCollider/SCClassLibrary/JITLib/GUI /usr/local/share/SuperCollider/SCClassLibrary/scide_scqt/JITLibGUI
 
-# OPTIONAL -> install SC3-plugins
+# install SC3-plugins
 git clone --recursive https://github.com/supercollider/sc3-plugins.git
 cd sc3-plugins
 mkdir build
@@ -60,6 +60,9 @@ tar -xzf /home/chip/4.4.11w1TH+.tgz
 cd /boot
 rm zImage
 cp vmlinuz-4.4.11w1TH+ zImage
+
+#create Inhibition directory
+mkdir /home/chip/Inhibition
 
 # get and compile the default code-bundle
 cd /home/chip
