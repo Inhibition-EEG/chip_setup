@@ -1,4 +1,6 @@
-#!/bin/sh
+#!/usr/bin/env bash
+
+BASEDIR=$(dirname "$BASH_SOURCE")
 
 # arguments
 SSID=$1
@@ -82,16 +84,16 @@ make
 cp -rf Install/* /home/chip/Inhibition/
 
 # init script
-cp ./run.sh /home/chip/Inhibition/run.sh
+cp $BASEDIR/run.sh /home/chip/Inhibition/run.sh
 chmod 777 /home/chip/Inhibition/run.sh
 
 # rc.local
-cp ./rc.local /etc/rc.local
+cp $BASHDIR/rc.local /etc/rc.local
 chmod 755 /etc/rc.local
 
 # crontab job
-cp ./etc_cron.d_ieeg /etc/cron.d/ieeg
+cp $BASHDIR/etc_cron.d_ieeg /etc/cron.d/ieeg
 
 #clean up
-cp /home/chip/halt /etc/init.d/halt
+cp $BASHDIR/halt /etc/init.d/halt
 chmod 755 /etc/init.d/halt
