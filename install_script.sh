@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-BASEDIR=$(dirname "$BASH_SOURCE")
+BASEDIR=$(pwd)
 
 # arguments
 SSID=$1
