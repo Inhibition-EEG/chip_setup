@@ -15,9 +15,9 @@ apt-get -y install jackd2 python-dev alsa-base alsa-utils libicu-dev libasound2-
 sudo wget -O /usr/local/bin/gpio.sh http://fordsfords.github.io/gpio_sh/gpio.sh
 
 # configure jack
-cp ./system.conf /etc/dbus-1/system.conf
+cp $BASEDIR/system.conf /etc/dbus-1/system.conf
 chmod 644 /etc/dbus-1/system.conf
-cp ./etc_security_limits.conf /etc/security/limits.conf
+cp $BASEDIR/etc_security_limits.conf /etc/security/limits.conf
 groupadd realtime
 usermod -a -G realtime root
 usermod -a -G realtime chip
