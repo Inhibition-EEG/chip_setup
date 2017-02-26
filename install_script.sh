@@ -88,12 +88,12 @@ cp $BASEDIR/run.sh /home/chip/Inhibition/run.sh
 chmod 777 /home/chip/Inhibition/run.sh
 
 # rc.local
-cp $BASHDIR/rc.local /etc/rc.local
+cp $BASEDIR/rc.local /etc/rc.local
 chmod 755 /etc/rc.local
 
 # crontab job
-cp $BASHDIR/etc_cron.d_ieeg /etc/cron.d/ieeg
+cp $BASEDIR/etc_cron.d_ieeg /etc/cron.d/ieeg
 
 #clean up
-cp $BASHDIR/halt /etc/init.d/halt
+cp $BASEDIR/halt /etc/init.d/halt
 chmod 755 /etc/init.d/halt
