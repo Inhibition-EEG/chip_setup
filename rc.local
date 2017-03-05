@@ -12,10 +12,12 @@
 # By default this script does nothing.
 
 source /usr/local/bin/gpio.sh
-gpio_export CSID5
-gpio_direction CSID5 out
-gpio_output CSID5 1
+gpio_export CSID1
+gpio_direction CSID1 out
+gpio_output CSID1 1
 gpio_export XIO_P1
 gpio_direction XIO_P1 in
+gpio_export XIO_P3
+gpio_direction XIO_P3 in
 
 exit 0
