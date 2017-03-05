@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-BASEDIR=$(pwd)
+BASEDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 # arguments
 SSID=$1
@@ -10,8 +10,9 @@ PASSWD=$2
 nmcli device wifi connect "$SSID" password "$PASSWD" ifname wlan0
 
 #update and install dependencies and tools we will most likely need -> *DO NOT UPGRADE
+export DEBIAN_FRONTEND=noninteractive
 apt-get update
-apt-get -y install jackd2 python-dev alsa-base alsa-utils libicu-dev libasound2-dev libsamplerate0-dev libsndfile1-dev libreadline-dev libxt-dev libudev-dev libavahi-client-dev libfftw3-dev cmake git gcc-4.8 g++-4.8 libjack-jackd2-dev libsndfile1-dev clang sox python3 python3-setuptools libfann-dev
+apt-get -q -y install jackd2 python-dev alsa-base alsa-utils libicu-dev libasound2-dev libsamplerate0-dev libsndfile1-dev libreadline-dev libxt-dev libudev-dev libavahi-client-dev libfftw3-dev cmake git gcc-4.8 g++-4.8 libjack-jackd2-dev libsndfile1-dev clang sox python3 python3-setuptools libfann-dev
 sudo wget -O /usr/local/bin/gpio.sh http://fordsfords.github.io/gpio_sh/gpio.sh
 
 # configure jack
