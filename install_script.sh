@@ -61,10 +61,6 @@ cp -rf /home/chip/sc_dependencies/* /usr/local/share/SuperCollider/Extensions/
 # rm zImage
 # cp vmlinuz-4.4.11w1TH+ zImage
 
-# install SPI support
-mkdir -p /sys/kernel/config/device-tree/overlays/spi
-cp /lib/firmware/nextthingco/chip/sample-spi.dtbo /sys/kernel/config/device-tree/overlays/spi/dtbo
-
 #create Inhibition directory
 mkdir /home/chip/Inhibition
 
