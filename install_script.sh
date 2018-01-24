@@ -36,8 +36,8 @@ make
 make install
 ldconfig
 cd ../..
-sudo mv /usr/local/share/SuperCollider/SCClassLibrary/Common/GUI /usr/local/share/SuperCollider/SCClassLibrary/scide_scqt/GUI
-sudo mv /usr/local/share/SuperCollider/SCClassLibrary/JITLib/GUI /usr/local/share/SuperCollider/SCClassLibrary/scide_scqt/JITLibGUI
+mv /usr/local/share/SuperCollider/SCClassLibrary/Common/GUI /usr/local/share/SuperCollider/SCClassLibrary/scide_scqt/GUI
+mv /usr/local/share/SuperCollider/SCClassLibrary/JITLib/GUI /usr/local/share/SuperCollider/SCClassLibrary/scide_scqt/JITLibGUI
 
 # install SC3-plugins
 git clone --recursive https://github.com/supercollider/sc3-plugins.git
@@ -55,11 +55,15 @@ mkdir /usr/local/share/SuperCollider/Extensions/
 cp -rf /home/chip/sc_dependencies/* /usr/local/share/SuperCollider/Extensions/
 
 # install the custom kernel
-cd /
-tar -xzf /home/chip/4.4.11w1TH+.tgz
-cd /boot
-rm zImage
-cp vmlinuz-4.4.11w1TH+ zImage
+# cd /
+# tar -xzf /home/chip/4.4.11w1TH+.tgz
+# cd /boot
+# rm zImage
+# cp vmlinuz-4.4.11w1TH+ zImage
+
+# install SPI support
+mkdir -p /sys/kernel/config/device-tree/overlays/spi
+cp /lib/firmware/nextthingco/chip/sample-spi.dtbo /sys/kernel/config/device-tree/overlays/spi/dtbo
 
 #create Inhibition directory
 mkdir /home/chip/Inhibition
