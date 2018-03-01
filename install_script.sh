@@ -47,7 +47,7 @@ mkdir build
 cd build
 export CC=/usr/bin/gcc-4.8
 export CXX=/usr/bin/g++-4.8
-cmake -DSC_PATH=/home/chip/supercollider ..
+cmake -DSC_PATH=/home/chip/chip_setup/supercollider ..
 make
 make install
 
