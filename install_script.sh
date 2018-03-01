@@ -53,7 +53,7 @@ make install
 
 #install sc-dependencies
 mkdir /usr/local/share/SuperCollider/Extensions/
-cp -rf /home/chip/sc_dependencies/* /usr/local/share/SuperCollider/Extensions/
+cp -rf /home/chip/chip_setup/sc_dependencies/* /usr/local/share/SuperCollider/Extensions/
 
 # install the custom kernel
 # cd /
